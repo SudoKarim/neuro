@@ -1,10 +1,14 @@
 import numpy as np
 
 text_data = [
-    ["I", "love", "to", "code"],
-    ["We", "need", "to", "learn"],
-    ["Time", "to", "go", "home"],
-    ["Nice", "to", "meet", "you"]
+    ["The", "sun", "is", "bright"],
+    ["Birds", "fly", "up", "high"],
+    ["She", "reads", "good", "books"],
+    ["Dogs", "bark", "at", "night"],
+    ["Rain", "falls", "down", "softly"],
+    ["Children", "play", "with", "toys"],
+    ["Trees", "grow", "very", "tall"],
+    ["Music", "sounds", "so", "beautiful"]
 ]
 
 def create_vocab(data):
@@ -99,7 +103,8 @@ def predict_fourth_word(rnn, first_three_words, vocab, reverse_vocab):
     predicted_idx = np.argmax(prob)
     return reverse_vocab[predicted_idx]
 
-test_sequence = ["I", "love", "to"]
+# Test with a sample sequence
+test_sequence = ["The", "sun", "is"]
 predicted = predict_fourth_word(rnn, test_sequence, vocab, reverse_vocab)
 print(f"\nTest prediction:")
 print(f"Input: {' '.join(test_sequence)}")
